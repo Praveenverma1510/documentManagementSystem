@@ -1,0 +1,40 @@
+<mat-toolbar color="primary" class="header mat-elevation-z6">
+  <a mat-icon-button routerLink="/" [title]="'DASHBOARD' | message">
+    <mat-icon>dashboard</mat-icon>
+  </a>
+
+  <span class="spacer"></span>
+
+  <ul class="links-big-screen">
+    <li>
+      <a mat-button routerLink="/companies">{{ 'COMPANIES' | message }}</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/templates">{{ 'TEMPLATES' | message }}</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/documents">{{ 'DOCUMENTS' | message }}</a>
+    </li>
+  </ul>
+
+  <a mat-icon-button [matMenuTriggerFor]="menu" class="links-small-screen">
+    <mat-icon>more_vert</mat-icon>
+  </a>
+
+  <mat-menu #menu>
+    <button mat-menu-item routerLink="/companies">
+      <mat-icon>work</mat-icon>
+      <span>{{ 'COMPANIES' | message }}</span>
+    </button>
+
+    <button mat-menu-item routerLink="/templates">
+      <mat-icon>assignment</mat-icon>
+      <span>{{ 'TEMPLATES' | message }}</span>
+    </button>
+
+    <button mat-menu-item routerLink="/documents">
+      <mat-icon>description</mat-icon>
+      <span>{{ 'DOCUMENTS' | message }}</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

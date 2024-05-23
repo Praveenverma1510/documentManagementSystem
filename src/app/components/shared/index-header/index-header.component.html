@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row *ngIf="!expandedSearch">
+    <button mat-icon-button [title]="'BACK' | message" (click)="onBack()">
+      <mat-icon>arrow_back_ios</mat-icon>
+    </button>
+    <span>{{ titleKey | message }}</span>
+
+    <span class="spacer"></span>
+
+    <button mat-icon-button [title]="'REFRESH' | message" (click)="onRefresh()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+    <button mat-icon-button [title]="'ADD' | message" (click)="onAdd()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button [title]="'SEARCH' | message" (click)="expandedSearch = true">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row *ngIf="expandedSearch">
+    <mat-form-field (keyup.enter)="onEnter($event)" class="full-width">
+      <input matInput autocomplete="off">
+    </mat-form-field>
+
+    <span class="spacer"></span>
+
+    <button mat-icon-button [title]="'CLOSE' | message" (click)="onClose()">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
