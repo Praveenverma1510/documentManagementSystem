@@ -19,7 +19,6 @@ export class TypeaheadPipe implements PipeTransform {
           }, 0) > 0 ? ++acc : acc;
         }, 0) === filters.length);
     }
-
     return options;
   }
 
